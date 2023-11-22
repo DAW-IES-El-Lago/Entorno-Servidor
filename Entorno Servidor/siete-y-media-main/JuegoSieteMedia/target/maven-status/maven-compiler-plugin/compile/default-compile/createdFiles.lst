@@ -1,0 +1,8 @@
+controlador\BarajaCartas.class
+com\mycompany\juegosietemedia\JakartaRestConfiguration.class
+controlador\HistorialPuntuaciones.class
+com\mycompany\juegosietemedia\resources\JakartaEE10Resource.class
+controlador\Carta$Palo.class
+controlador\ManoJugador.class
+controlador\Carta.class
+controlador\LogicaJuego.class
