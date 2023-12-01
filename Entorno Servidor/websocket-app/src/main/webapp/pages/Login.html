@@ -39,6 +39,7 @@
       >
         <a
           class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 hidden md:flex"
+          href='../index.html'
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -65,22 +66,7 @@
         </nav>
       </div>
     </header>
-    <!--Fondo de pantalla-->
-    <div class="relative isolate px-6 pt-14 lg:px-8">
-      <div
-        class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-        aria-hidden="true"
-      >
-        <!--Fondo superior-->
-        <div
-          class="fondo relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-        ></div>
-        <!--Fondo inferior-->
-        <div
-          class="fondo relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-        ></div>
-      </div>
-
+    
       <!--
   This example requires some changes to your config:
   
@@ -103,6 +89,7 @@
   <body class="h-full">
   ```
 -->
+      <!--contenido de la pagina-->
       <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
@@ -185,6 +172,26 @@
         </div>
       </div>
     </div>
+
+    <!--FIn contenido de la pagina-->
+
+    <!--Fondo de pantalla-->
+    <div class="px-6 pt-14 lg:px-8">
+      <div
+        class="inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 absolute"
+      >
+        <!--Fondo superior-->
+        <div
+          class="fondo relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+        ></div>
+        <!--Fondo inferior-->
+        <div
+          class="fondo relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+        ></div>
+      </div>
+    </div>
+
+    <!--Footer-->
     <footer class="text-gray-600 body-font absolute fixed bottom-0 w-full">
       <div
         class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col"

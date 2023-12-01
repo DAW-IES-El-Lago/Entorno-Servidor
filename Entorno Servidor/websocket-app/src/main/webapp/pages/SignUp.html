@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       .fondo {
+        z-index: -999;
         clip-path: polygon(
           74.1% 44.1%,
           100% 61.6%,
@@ -33,12 +34,13 @@
     </style>
   </head>
   <body class="no-scroll">
-    <header class="text-gray-600 body-font">
+    <header class="text-gray-600 body-font" style="z-index: 1000">
       <div
-        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+        class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center relative"
       >
         <a
           class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 hidden md:flex"
+          href="#"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -59,94 +61,82 @@
         <nav
           class="md:ml-auto md:mr-0 flex flex-wrap items-end text-base justify-center"
         >
-          <a class="mr-5 hover:text-gray-900">Inicio</a>
-          <a class="mr-5 hover:text-gray-900">Chat</a>
-          <a class="mr-5 hover:text-gray-900">Contacto</a>
+          <a class="mr-5 hover:text-gray-900" href="#">Inicio</a>
+          <a class="mr-5 hover:text-gray-900" href="#">Chat</a>
+          <a class="mr-5 hover:text-gray-900" href="#">Contacto</a>
         </nav>
       </div>
     </header>
-    <!--Fondo de pantalla-->
-    <div class="relative isolate px-6 pt-14 lg:px-8">
-      <div
-        class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-        aria-hidden="true"
-      >
-        <!--Fondo superior-->
-        <div
-          class="fondo relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-        ></div>
-        <!--Fondo inferior-->
-        <div
-          class="fondo relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-        ></div>
-      </div>
-    </div>
 
     <!--contenido va aqui-->
 
     <div
-      class="flex bg-white p-8 rounded-lg shadow-md w-full max-w-md flex-col items-center justify-center"
+      class="flex p-8 rounded-lg flex-col items-center justify-center relative"
     >
-      <h2 class="text-2xl font-semibold mb-6">Registro</h2>
+      <h2 class="text-2xl font-semibold mb-6">Sign Up</h2>
 
-      <form action="#" method="POST">
-        <div class="mb-4">
-          <label for="nombre" class="block text-gray-600 text-sm font-medium"
-            >Nombre</label
+      <div class="flex items-center justify-center">
+        <form action="#" method="POST" class="w-full max-w-md">
+          <div class="mb-4">
+            <label for="nombre" class="text-gray-600 text-sm font-medium"
+              >Nombre</label
+            >
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              class="mt-1 p-2 w-full border rounded-md"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="email" class="block text-gray-600 text-sm font-medium"
+              >Correo Electrónico</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="mt-1 p-2 w-full border rounded-md"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label
+              for="password"
+              class="block text-gray-600 text-sm font-medium"
+              >Contraseña</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="mt-1 p-2 w-full border rounded-md"
+            />
+          </div>
+
+          <div class="mb-6">
+            <label
+              for="confirmarPassword"
+              class="block text-gray-600 text-sm font-medium"
+              >Confirmar Contraseña</label
+            >
+            <input
+              type="password"
+              id="confirmarPassword"
+              name="confirmarPassword"
+              class="mt-1 p-2 w-full border rounded-md"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
           >
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            class="mt-1 p-2 w-full border rounded-md"
-          />
-        </div>
-
-        <div class="mb-4">
-          <label for="email" class="block text-gray-600 text-sm font-medium"
-            >Correo Electrónico</label
-          >
-          <input
-            type="email"
-            id="email"
-            name="email"
-            class="mt-1 p-2 w-full border rounded-md"
-          />
-        </div>
-
-        <div class="mb-4">
-          <label for="password" class="block text-gray-600 text-sm font-medium"
-            >Contraseña</label
-          >
-          <input
-            type="password"
-            id="password"
-            name="password"
-            class="mt-1 p-2 w-full border rounded-md"
-          />
-        </div>
-
-        <div class="mb-6">
-          <label
-            for="confirmarPassword"
-            class="block text-gray-600 text-sm font-medium"
-            >Confirmar Contraseña</label
-          >
-          <input
-            type="password"
-            id="confirmarPassword"
-            name="confirmarPassword"
-            class="mt-1 p-2 w-full border rounded-md"
-          />
-        </div>
-
-        <button
-          type="submit"
-          class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
-        >
-          Registrarse
-        </button>
-      </form>
+            Registrarse
+          </button>
+        </form>
+      </div>
 
       <p class="mt-10 text-center text-sm text-gray-500">
         Already a member?
@@ -159,6 +149,23 @@
     </div>
     <!--contenido acaba aqui-->
 
+    <!--Fondo de pantalla-->
+    <div class="px-6 pt-14 lg:px-8">
+      <div
+        class="inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 absolute"
+      >
+        <!--Fondo superior-->
+        <div
+          class="fondo relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+        ></div>
+        <!--Fondo inferior-->
+        <div
+          class="fondo relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+        ></div>
+      </div>
+    </div>
+
+    <!--Footer-->
     <footer class="text-gray-600 body-font absolute fixed bottom-0 w-full">
       <div
         class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col"
