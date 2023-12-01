@@ -6,6 +6,7 @@
     <title>Sign Up</title>
     <link rel="stylesheet" href="styles/commoaan.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
       .fondo {
         z-index: -999;
@@ -42,21 +43,11 @@
           class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 hidden md:flex"
           href="#"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            class="w-10 h-10 text-white p-2 bg-purple-500 rounded-full"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-            ></path>
-          </svg>
-          <span class="ml-3 text-xl">Bili Bili</span>
+          <img
+            class="mx-auto h-10 w-auto"
+            src="../../resources/images/logo-bili-bili.png"
+            alt="Logo Bili"
+          />
         </a>
         <nav
           class="md:ml-auto md:mr-0 flex flex-wrap items-end text-base justify-center"
@@ -70,83 +61,123 @@
 
     <!--contenido va aqui-->
 
-    <div
-      class="flex p-8 rounded-lg flex-col items-center justify-center relative"
-    >
-      <h2 class="text-2xl font-semibold mb-6">Sign Up</h2>
+    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="text-center tracking-tight text-gray-900 w-12 h-12 mx-auto"
+        >
+          <path
+            d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z"
+          />
+        </svg>
 
-      <div class="flex items-center justify-center">
-        <form action="#" method="POST" class="w-full max-w-md">
-          <div class="mb-4">
-            <label for="nombre" class="text-gray-600 text-sm font-medium"
-              >Nombre</label
-            >
-            <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              class="mt-1 p-2 w-full border rounded-md"
-            />
-          </div>
-
-          <div class="mb-4">
-            <label for="email" class="block text-gray-600 text-sm font-medium"
-              >Correo Electrónico</label
-            >
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="mt-1 p-2 w-full border rounded-md"
-            />
-          </div>
-
-          <div class="mb-4">
-            <label
-              for="password"
-              class="block text-gray-600 text-sm font-medium"
-              >Contraseña</label
-            >
-            <input
-              type="password"
-              id="password"
-              name="password"
-              class="mt-1 p-2 w-full border rounded-md"
-            />
-          </div>
-
-          <div class="mb-6">
-            <label
-              for="confirmarPassword"
-              class="block text-gray-600 text-sm font-medium"
-              >Confirmar Contraseña</label
-            >
-            <input
-              type="password"
-              id="confirmarPassword"
-              name="confirmarPassword"
-              class="mt-1 p-2 w-full border rounded-md"
-            />
-          </div>
-
-          <button
-            type="submit"
-            class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
-          >
-            Registrarse
-          </button>
-        </form>
+        <h2
+          class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900"
+        >
+          Sign Up for Free
+        </h2>
       </div>
 
-      <p class="mt-10 text-center text-sm text-gray-500">
-        Already a member?
-        <a
-          href="#"
-          class="font-semibold leading-6 text-indigo-600 hover:text-indigo-300"
-          >Log In</a
-        >
-      </p>
+      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form class="space-y-6" action="#" method="POST">
+          <div>
+            <label
+              for="email"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Name</label
+            >
+            <div class="mt-2">
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div>
+            <label
+              for="email"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Email address</label
+            >
+            <div class="mt-2">
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between">
+              <label
+                for="password"
+                class="block text-sm font-medium leading-6 text-gray-900"
+                >Password</label
+              >
+            </div>
+
+            <div class="mt-2">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                required
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center justify-between">
+              <label
+                for="password"
+                class="block text-sm font-medium leading-6 text-gray-900"
+                >Confirm Password</label
+              >
+            </div>
+
+            <div class="mt-2">
+              <input
+                id="confirm-password"
+                name="confirm-password"
+                type="password"
+                required
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Create Account
+            </button>
+          </div>
+        </form>
+
+        <p class="mt-10 text-center text-sm text-gray-500">
+          Not a member?
+          <a
+            href="#"
+            class="font-semibold leading-6 text-indigo-600 hover:text-indigo-300"
+            >Register, It's Free</a
+          >
+        </p>
+      </div>
     </div>
+
     <!--contenido acaba aqui-->
 
     <!--Fondo de pantalla-->
