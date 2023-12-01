@@ -7,51 +7,53 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Author     : dawmi
 */
 
-@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
-
+@import url("https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css");
 
 /* Reset de estilos */
-body, h1, h2, h3, p, ul, li {
-    margin: 0;
-    padding: 0;
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
 }
 
 /* Fuentes */
 body {
-    font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
-h1, h2, h3 {
-    font-family: 'Verdana', sans-serif;
+h1,
+h2,
+h3 {
+  font-family: "Verdana", sans-serif;
 }
 
-/* Colores */
-body {
-    background-color: #f0f0f0;
-    color: #333;
+.fondo {
+  z-index: -999;
+  clip-path: polygon(
+    74.1% 44.1%,
+    100% 61.6%,
+    97.5% 26.9%,
+    85.5% 0.1%,
+    80.7% 2%,
+    72.5% 32.5%,
+    60.2% 62.4%,
+    52.4% 68.1%,
+    47.5% 58.3%,
+    45.2% 34.5%,
+    27.5% 76.7%,
+    0.1% 64.9%,
+    17.9% 100%,
+    27.6% 76.8%,
+    76.1% 97.7%,
+    74.1% 44.1%
+  );
 }
-
-.header {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px;
+.no-scroll {
+  overflow: hidden;
 }
-
-/* Botones de modo oscuro y modo claro */
-.dark-mode, .light-mode {
-    display: inline-block;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.dark-mode {
-    background-color: #333;
-    color: #fff;
-}
-
-.light-mode {
-    background-color: #fff;
-    color: #333;
-}
-
-/* Resto de tus estilos aquí */
+    

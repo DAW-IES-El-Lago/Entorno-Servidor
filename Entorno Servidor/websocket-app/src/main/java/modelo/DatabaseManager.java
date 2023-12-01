@@ -21,9 +21,9 @@ public class DatabaseManager {
      * Clase que gestiona la interacción con la base de datos.
      */
     // Atributos de la clase
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/tu_base_de_datos";
-    private static final String JDBC_USER = "tu_usuario";
-    private static final String JDBC_PASSWORD = "tu_contraseña";
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/websocketApp";
+    private static final String JDBC_USER = "java2";
+    private static final String JDBC_PASSWORD = "Garyberto1";
 
     /**
      * Obtiene una conexión a la base de datos.
@@ -59,7 +59,7 @@ public class DatabaseManager {
         }
     }
 
-     /**
+    /**
      * Inserta un nuevo usuario en la base de datos.
      *
      * @param user Usuario a insertar en la base de datos.
@@ -70,14 +70,19 @@ public class DatabaseManager {
 
         try {
             connection = getConnection();
-            String query = "INSERT INTO users (username, first_name, last_name, photo_url, password, email) VALUES (?, ?, ?, ?)";
+            String query = 
+                    "INSERT INTO users (user_id, username, first_name, last_name, photo_url, email, password)"
+                    + "VALUES ('4', 'jurek_user', 'Jurek', 'Apellido', 'jurek.jpg', 'jurek@example.com', 'contraseña123');";
             preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, user.getUsername());
-            preparedStatement.setString(2, user.getFirstName());
-            preparedStatement.setString(3, user.getLastName());
-            preparedStatement.setString(4, user.getPhotoUrl());
-            preparedStatement.setString(5, user.getPassword());
-            preparedStatement.setString(6, user.getEmail());
+            /* 
+            preparedStatement.setString(1, user.getUserId());
+            //preparedStatement.setString(2, user.getFirstName());
+            //preparedStatement.setString(3, user.getLastName());
+            //preparedStatement.setString(4, user.getPhotoUrl());
+            preparedStatement.setString(2, user.getUsername());
+            preparedStatement.setString(3, user.getPassword());
+            preparedStatement.setString(4, user.getEmail()); */
+
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             System.out.print(e.toString());
@@ -87,7 +92,7 @@ public class DatabaseManager {
         }
     }
 
-     /**
+    /**
      * Inserta un nuevo mensaje en la base de datos.
      *
      * @param message Mensaje a insertar en la base de datos.
@@ -113,11 +118,13 @@ public class DatabaseManager {
     }
 
     /**
-     * Verifica si un usuario con el nombre de usuario y una contraseña dados ya existen en la base de datos y son pareja.
+     * Verifica si un usuario con el nombre de usuario y una contraseña dados ya
+     * existen en la base de datos y son pareja.
      *
      * @param username Nombre de usuario a verificar.
      * @param password Contraseña a verificar.
-     * @return true si el usuario y la contraseña son correctos, false de lo contrario.
+     * @return true si el usuario y la contraseña son correctos, false de lo
+     * contrario.
      */
     public static boolean validateCredentials(String username, String password) {
         boolean exists = false;
@@ -141,7 +148,8 @@ public class DatabaseManager {
     }
 
     /**
-     * Verifica si un usuario con el nombre de usuario dado ya existe en la base de datos.
+     * Verifica si un usuario con el nombre de usuario dado ya existe en la base
+     * de datos.
      *
      * @param username Nombre de usuario a verificar.
      * @return true si el usuario existe, false de lo contrario.
