@@ -1,0 +1,8 @@
+# Dockerfile
+FROM tomcat:latest
+
+# Copia el archivo WAR a la carpeta webapps de Tomcat
+COPY H:\DEV23\Entorno-Servidor\Entorno Servidor\websocket-app\final.war /usr/local/tomcat/webapps/
+
+# Exponer el puerto en el que Tomcat se ejecuta (por defecto 8080)
+EXPOSE 8080

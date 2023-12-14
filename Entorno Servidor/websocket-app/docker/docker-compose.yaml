@@ -1,0 +1,22 @@
+# docker-compose.yml
+version: '3'
+
+services:
+  mysql:
+    build:
+      context: H:\DEV23\Entorno-Servidor\Entorno Servidor\websocket-app\docker\mysql\
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  tomcat:
+    build:
+      context: H:\DEV23\Entorno-Servidor\Entorno Servidor\websocket-app\docker\tomcat\
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+
+volumes:
+  mysql_data:
