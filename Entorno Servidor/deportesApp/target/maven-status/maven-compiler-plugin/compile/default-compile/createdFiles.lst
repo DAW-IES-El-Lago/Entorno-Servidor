@@ -1,0 +1,5 @@
+com\melakugb\deportesapp\resources\JakartaEE10Resource.class
+com\melakugb\deportesapp\Deporte.class
+com\melakugb\deportesapp\DBConnection.class
+com\melakugb\deportesapp\HelloWorld.class
+com\melakugb\deportesapp\JakartaRestConfiguration.class
