@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!-- Mapeo del ServletEliminarMensaje -->
+    <servlet>
+        <servlet-name>ServletEliminarMensaje</servlet-name>
+        <servlet-class>mg_servlets.ServletEliminarMensaje</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletEliminarMensaje</servlet-name>
+        <url-pattern>/eliminarMensaje</url-pattern>
+    </servlet-mapping>
+
+    <!-- Mapeo del ServletEliminarUsuario -->
+    <servlet>
+        <servlet-name>ServletEliminarUsuario</servlet-name>
+        <servlet-class>mg_servlets.ServletEliminarUsuario</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletEliminarUsuario</servlet-name>
+        <url-pattern>/eliminarUsuario</url-pattern>
+    </servlet-mapping>
+
+    <!-- Mapeo del ServletGuardar -->
+    <servlet>
+        <servlet-name>ServletGuardar</servlet-name>
+        <servlet-class>mg_servlets.ServletGuardar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletGuardar</servlet-name>
+        <url-pattern>/guardar</url-pattern>
+    </servlet-mapping>
+
+    <!-- Mapeo del ServletLogout -->
+    <servlet>
+        <servlet-name>ServletLogout</servlet-name>
+        <servlet-class>mg_servlets.ServletLogout</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletLogout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <!-- Mapeo del ServletModificarUsuario -->
+    <servlet>
+        <servlet-name>ServletModificarUsuario</servlet-name>
+        <servlet-class>mg_servlets.ServletModificarUsuario</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletModificarUsuario</servlet-name>
+        <url-pattern>/modificarUsuario</url-pattern>
+    </servlet-mapping>
+
+    <!-- Mapeo del ServletUsuario -->
+    <servlet>
+        <servlet-name>ServletUsuario</servlet-name>
+        <servlet-class>mg_servlets.ServletUsuario</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletUsuario</servlet-name>
+        <url-pattern>/usuario</url-pattern>
+    </servlet-mapping>
+
+    <!-- Mapeo del ServletValidar -->
+    <servlet>
+        <servlet-name>ServletValidar</servlet-name>
+        <servlet-class>mg_servlets.ServletValidar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletValidar</servlet-name>
+        <url-pattern>/validar</url-pattern>
+    </servlet-mapping>
+
+</web-app>

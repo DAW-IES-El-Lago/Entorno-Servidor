@@ -1,0 +1,13 @@
+com\mgb\mgb_crud_despliegue\resources\JakartaEE10Resource.class
+mgb\servlets\ServletLogout.class
+mgb\clases\BaseDato.class
+mgb\clases\Usuario.class
+mgb\servlets\ServletEliminarMensaje.class
+mgb\servlets\ServletEliminarUsuario.class
+mgb\clases\User_mensaje.class
+mgb\clases\Mensaje.class
+mgb\servlets\ServletGuardar.class
+mgb\servlets\ServletGuardarUsuario.class
+mgb\servlets\ServletValidar.class
+mgb\servlets\ServletModificarUsuario.class
+mgb\servlets\ServletUsuario.class
