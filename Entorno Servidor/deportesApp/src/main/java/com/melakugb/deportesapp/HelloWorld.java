@@ -34,9 +34,16 @@ public class HelloWorld extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession ses = request.getSession();
         String run = request.getParameter("run");
         String deporte = request.getParameter("deporte");
+        String aficionado = request.getParameter("aficionado");
         String task = request.getParameter("task");
+        String newDeporte = request.getParameter("deporteNuevo");
+        String oldDeporte = request.getParameter("deporteViejo");
+        String nombre_tabla = request.getParameter("nombre_tabla");
+        String deleteWordParameter = request.getParameter("delete_word");
+        
 
         if (run == null) {  // not first run
 
@@ -61,6 +68,25 @@ public class HelloWorld extends HttpServlet {
                     response.sendRedirect("form.jsp");
                     break;
 
+                case "update":
+
+                    if (deporte != null && !deporte.isBlank() && newDeporte != null && !newDeporte.isBlank()) {
+                        // Assuming 'deporte' is the old name and 'newDeporte' is the new name
+                        int rowsAffected = db.updateSport(oldDeporte, newDeporte);
+
+                        if (rowsAffected > 0) {
+                            // The update was successful
+                            System.out.println("Sport updated successfully!");
+                        } else {
+                            // The update failed or no matching records were found
+                            System.out.println("Failed to update sport or no matching records found.");
+                        }
+                    } else {
+                        // Handling the case where 'deporte' or 'newDeporte' is null or blank
+                        throw new IllegalArgumentException("No se puede actualizar con valores nulos o en blanco.");
+                    }
+                    response.sendRedirect("form.jsp");
+                    break;
                 case "list":
                     ArrayList<Deporte> listSports = null;
                     //obtenemos de la base de datos la lista de deportes:
@@ -69,10 +95,45 @@ public class HelloWorld extends HttpServlet {
                     //llegar a la página JSP.
                     //Para ello, hay que guardarla en el objeto Session
                     //y recuperarla de este objeto en la página JSP:
-                    HttpSession s = request.getSession();
-                    s.setAttribute("listSports", listSports);
+
+                    ses.setAttribute("listSports", listSports);
                     response.sendRedirect("listAndForm.jsp");
 //                    listSportsAndShowForm(listSports, response);
+                    break;
+                case "numero_registros":
+                    int total = db.totalRegistros(nombre_tabla);
+                    ses.setAttribute("total_registros", total);
+
+                case "buscar_patron":
+                    if (deporte.isBlank()) {
+                    } else {
+                        ArrayList<Deporte> listSports1 = null;
+                        listSports1 = db.listLike(deporte);
+                        HttpSession s1 = request.getSession();
+                        s1.setAttribute("listSports", listSports1);
+                        response.sendRedirect("listAndForm.jsp");
+                    }
+                    break;
+
+                case "insert_aficionado":
+                    if (aficionado != null && !aficionado.isBlank()) {
+                        db.insertAficionado(aficionado);
+                    } else {
+                        // Manejo del caso en que 'deporte' es nulo o en blanco
+                        throw new IllegalArgumentException("No se puede insertar un valor nulo o en blanco.");
+                    }
+                    response.sendRedirect("form.jsp");
+                    break;
+
+                case "delete_on_cascade":
+                    int deleteWord = Integer.parseInt(deleteWordParameter);
+                    if (deleteWord >= 0) {
+                        db.deleteOnCascade(deleteWord);
+                    } else {
+                        // Manejo del caso en que 'deporte' es nulo o en blanco
+                        throw new IllegalArgumentException("No se puede borrar un valor nulo o en blanco.");
+                    }
+                    response.sendRedirect("form.jsp");
                     break;
                 default:
                     break;
